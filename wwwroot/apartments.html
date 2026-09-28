@@ -79,10 +79,10 @@
   <section class="inventory" aria-label="רשימת הדירות">
     <div class="wrap">
       <div id="inventory">
-        <!-- JetVaults real-estate widget mounts here. data-project must match the project id published in the JetVaults Manager. -->
+        <!-- JetVaults real-estate widget mounts here. data-project is the Manager project id, which is the project NAME slug (here "ramot-elad"), not the G4 file UUID. -->
         <script src="/assets/jetvaults-real-estate.js" defer
                 data-container="ramot-elya"
-                data-project="41dc8a1a-bedb-485f-a9f4-9fb11ea24bc2"></script>
+                data-project="ramot-elad"></script>
         <noscript><p class="inventory__empty">להצגת מלאי הדירות יש להפעיל JavaScript בדפדפן.</p></noscript>
       </div>
       <p class="inventory__empty" id="inventory-fallback" hidden>מלאי הדירות יעלה לאתר בקרוב. בינתיים נשמח לענות על כל שאלה, <a href="/#contact" style="text-decoration:underline;font-weight:500">פרטי הקשר בעמוד הראשי</a>.</p>

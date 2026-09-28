@@ -41,3 +41,20 @@ body.page-inventory #inventory .badge { border-radius: var(--r0); }
 body.page-inventory #inventory a { color: var(--forest); }
 body.page-inventory #inventory .text-primary { color: var(--forest) !important; }
 body.page-inventory #inventory .bg-primary { background-color: var(--forest) !important; color: #fff !important; }
+
+/* Project colours from the Manager default to blue; pin the widget to the site palette.
+   The widget sets --main-color etc. inline on its root, so redefine them on its children. */
+body.page-inventory .jv-realestate-root > * {
+  --main-color: #2a432d;
+  --secondary-color: #65705a;
+  --light-color: #f9faf9;
+}
+body.page-inventory .jv-realestate-root .floor-section,
+body.page-inventory .jv-realestate-root [style*="border"] { border-radius: 3px; }
+
+/* Bootstrap (loaded by the widget) defines .nav { display:flex } which beats our mobile rule */
+@media (max-width: 1023px) {
+  body.page-inventory .header .nav { display: none !important; }
+  body.page-inventory .header__end .btn { display: none; }
+}
+body.page-inventory .header .nav { padding: 0; margin: 0; flex-wrap: nowrap; }
