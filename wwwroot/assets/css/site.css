@@ -162,7 +162,7 @@ body.menu-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-4
 .hero__in { position: relative; padding-block: clamp(3rem, 6vw, 5rem) clamp(4rem, 8vw, 6.5rem); display: grid; gap: 1.4rem; max-width: 720px; }
 .hero__logo { width: clamp(220px, 32vw, 380px); height: auto; margin-bottom: 0.4rem; filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.25)); }
 .hero__title { font-size: clamp(1.9rem, 4.2vw, 3.3rem); line-height: 1.15; font-weight: 600; text-wrap: balance; }
-.hero__title small { display: block; font-size: 0.5em; font-weight: 500; color: rgba(255, 255, 255, 0.85); margin-bottom: 0.5em; letter-spacing: 0.01em; }
+.hero__title small { display: block; font-size: clamp(1rem, 1.6vw, 1.45rem); font-weight: 500; color: rgba(255, 255, 255, 0.85); margin-bottom: 0.5em; letter-spacing: 0.01em; }
 .hero__sub { font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: rgba(255, 255, 255, 0.86); max-width: 44ch; }
 .hero__actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 0.4rem; }
 .hero__scroll { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); color: rgba(255, 255, 255, 0.85); display: flex; align-items: center; gap: 8px; font-size: 0.85rem; }
