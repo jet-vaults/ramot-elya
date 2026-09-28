@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------
-:root { --r0: 0; }
+:root { --r0: 3px; }
    מלאי דירות — page styles + JetVaults real-estate widget re-skin.
    The widget injects Bootstrap + Font Awesome AFTER this file, so the
    site chrome is guarded with body.page-inventory specificity.
