@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>מלאי דירות | אליה על הפארק 2</title>
+<meta name="description" content="מלאי הדירות בפרויקט אליה על הפארק 2 בשכונת רמות, באר שבע: סוגי דירות, קומות, שטחים ותוכניות דירה, במחיר למשתכן ובשוק החופשי.">
+<meta name="theme-color" content="#386447">
+<link rel="canonical" href="https://ramot-elya.co.il/apartments.html">
+<meta property="og:title" content="מלאי דירות | אליה על הפארק 2">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ramot-elya.co.il/assets/img/og.jpg">
+<meta property="og:locale" content="he_IL">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/rubik-hebrew.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/inventory.css">
+</head>
+<body class="page-inventory">
+<a class="skip" href="#main">דילוג לתוכן</a>
+<div id="top-sentinel" aria-hidden="true"></div>
+
+<header class="header">
+  <div class="wrap header__in">
+    <a class="brand" href="/" aria-label="אליה על הפארק 2, לעמוד הראשי"><img src="/assets/brand/logo-park.png" width="900" height="364" alt="אליה על הפארק 2"></a>
+    <nav class="nav" aria-label="ניווט ראשי">
+      <ul>
+        <li><a href="/">ראשי</a></li>
+        <li><a href="/#project">על הפרויקט</a></li>
+        <li><a href="/#company">על החברה</a></li>
+        <li><a href="/#gallery">הגלריה</a></li>
+        <li><a href="/#downloads">הורדות</a></li>
+        <li><a href="/#contact">צור קשר</a></li>
+      </ul>
+    </nav>
+    <div class="header__end">
+      <a class="btn btn--solid" href="/apartments.html" aria-current="page">מלאי דירות</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="פתיחת התפריט"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="תפריט">
+  <div class="menu__backdrop" data-close-menu></div>
+  <div class="menu__panel">
+    <div class="menu__top">
+      <img src="/assets/brand/logo-park.png" width="900" height="364" alt="אליה על הפארק 2">
+      <button class="menu__close" type="button" data-close-menu aria-label="סגירת התפריט"><svg class="ico" aria-hidden="true"><use href="/assets/img/icons.svg#x"/></svg></button>
+    </div>
+    <nav aria-label="ניווט במובייל">
+      <a href="/">ראשי</a>
+      <a href="/#project">על הפרויקט</a>
+      <a href="/#company">על החברה</a>
+      <a href="/#gallery">הגלריה</a>
+      <a href="/#downloads">הורדות</a>
+      <a href="/#contact">צור קשר</a>
+    </nav>
+    <a class="btn btn--solid" href="/apartments.html" aria-current="page">מלאי דירות</a>
+    <div class="menu__company"><img src="/assets/brand/logo-elya.png" width="600" height="243" alt="י. אליה ובניו, יזמות וקבלני בניין בע״מ"></div>
+  </div>
+</div>
+
+<main id="main">
+  <section class="inv-hero" aria-labelledby="inv-title">
+    <div class="inv-hero__media">
+      <picture>
+        <source type="image/webp" srcset="/assets/img/hero-800.webp 800w, /assets/img/hero-1400.webp 1400w, /assets/img/hero-2048.webp 2048w" sizes="100vw">
+        <img src="/assets/img/hero-1400.jpg" width="2048" height="1032" alt="" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
+    <div class="inv-hero__scrim" aria-hidden="true"></div>
+    <div class="wrap inv-hero__in">
+      <h1 id="inv-title">מלאי דירות</h1>
+      <p>הדירות הזמינות בפרויקט אליה על הפארק 2, במחיר למשתכן ובשוק החופשי.</p>
+    </div>
+  </section>
+
+  <section class="inventory" aria-label="רשימת הדירות">
+    <div class="wrap">
+      <div id="inventory">
+        <!-- JetVaults real-estate widget mounts here. data-project must match the project id published in the JetVaults Manager. -->
+        <script src="/assets/jetvaults-real-estate.js" defer
+                data-container="ramot-elya"
+                data-project="אליה-על-הפארק-2"></script>
+        <noscript><p class="inventory__empty">להצגת מלאי הדירות יש להפעיל JavaScript בדפדפן.</p></noscript>
+      </div>
+      <p class="inventory__empty" id="inventory-fallback" hidden>מלאי הדירות יעלה לאתר בקרוב. בינתיים נשמח לענות על כל שאלה, <a href="/#contact" style="text-decoration:underline;font-weight:500">פרטי הקשר בעמוד הראשי</a>.</p>
+      <script>
+        /* The widget prints a raw fetch error when the project has not been published yet; swap it for a friendly note. */
+        (function () {
+          var host = document.getElementById('inventory'), fb = document.getElementById('inventory-fallback');
+          new MutationObserver(function () {
+            var t = host.textContent || '';
+            if (/→ 4\d\d|Failed to fetch|Error/.test(t)) { host.hidden = true; fb.hidden = false; }
+          }).observe(host, { childList: true, subtree: true, characterData: true });
+        })();
+      </script>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img class="footer__logo" src="/assets/brand/logo-park-hero.png" width="900" height="364" alt="אליה על הפארק 2" loading="lazy">
+        <p class="footer__tag">שלב ב׳ של אליה על הפארק: 132 יחידות דיור ב-8 בניינים בשכונת רמות, באר שבע.</p>
+      </div>
+      <div>
+        <p class="footer__h">ניווט</p>
+        <ul>
+          <li><a href="/#project">על הפרויקט</a></li>
+          <li><a href="/#company">על החברה</a></li>
+          <li><a href="/#gallery">הגלריה</a></li>
+          <li><a href="/#downloads">הורדות</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__h">מידע</p>
+        <ul>
+          <li><a href="/apartments.html">מלאי דירות</a></li>
+          <li><a href="/#contact">צור קשר</a></li>
+          <li><a href="/accessibility.html">הצהרת נגישות</a></li>
+          <li><a href="/privacy.html">מדיניות פרטיות</a></li>
+        </ul>
+      </div>
+      <div class="footer__company">
+        <p class="footer__h">היזם</p>
+        <img src="/assets/brand/logo-elya-white.png" width="600" height="243" alt="י. אליה ובניו, יזמות וקבלני בניין בע״מ" loading="lazy">
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 י. אליה ובניו בע״מ. ההדמיות להמחשה בלבד. ט.ל.ח.</span>
+      <a href="https://einstein-web.co.il" target="_blank" rel="noopener">Powered by Einstein Web</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/a11y.js" defer></script>
+</body>
+</html>

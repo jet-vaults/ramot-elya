@@ -1,0 +1,53 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "wwwroot/index.html"
+        ],
+        "createdAt": "2026-09-28T16:56:47.877Z",
+        "reason": "model: overflow-hidden sections wrap absolutely-positioned background media (hero/band images and scrims), not popovers"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "wwwroot/apartments.html"
+        ],
+        "createdAt": "2026-09-28T16:56:48.003Z",
+        "reason": "model: overflow-hidden sections wrap absolutely-positioned background media (hero/band images and scrims), not popovers"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "wwwroot/accessibility.html"
+        ],
+        "createdAt": "2026-09-28T16:56:48.124Z",
+        "reason": "model: overflow-hidden sections wrap absolutely-positioned background media (hero/band images and scrims), not popovers"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "wwwroot/privacy.html"
+        ],
+        "createdAt": "2026-09-28T16:56:48.247Z",
+        "reason": "model: overflow-hidden sections wrap absolutely-positioned background media (hero/band images and scrims), not popovers"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "wwwroot/index.html"
+        ],
+        "createdAt": "2026-09-28T16:56:56.379Z",
+        "reason": "model: lightbox <img> has no src by design; site.js sets it when a gallery image opens and CSS hides it until then"
+      }
+    ]
+  }
+}
