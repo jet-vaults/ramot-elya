@@ -92,6 +92,15 @@
         ],
         "createdAt": "2026-09-28T19:19:53.780Z",
         "reason": "model: 3-line English display tagline copied from the client's brochure sketch"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "wwwroot/assets/css/site.css"
+        ],
+        "createdAt": "2026-09-28T20:38:54.577Z",
+        "reason": "model: the quote rule beside the company callout is a plain text rule, not a card; the user reviewed this block twice and only asked to swap its text"
       }
     ]
   }
