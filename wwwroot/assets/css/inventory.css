@@ -18,13 +18,19 @@ body.page-inventory .footer__logo { width: 220px; }
 body.page-inventory .footer__company img { height: 52px; width: auto; }
 body.page-inventory .footer__bottom { margin-top: clamp(2rem, 4vw, 3rem); }
 
-.inv-hero { position: relative; height: clamp(18rem, 42vh, 27rem); display: flex; align-items: flex-end; overflow: hidden; background: var(--forest-deep); color: #fff; }
-.inv-hero__media, .inv-hero__media img { position: absolute; inset: 0; width: 100%; height: 100%; }
-.inv-hero__media img { object-fit: cover; object-position: 50% 55%; }
-.inv-hero__scrim { position: absolute; inset: 0; background: linear-gradient(to top, rgba(22, 41, 29, 0.88) 0%, rgba(22, 41, 29, 0.3) 60%, rgba(22, 41, 29, 0.1) 100%); }
-.inv-hero__in { position: relative; padding-block: 2.2rem; display: grid; gap: 0.5rem; }
-.inv-hero__in h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 600; line-height: 1.1; }
-.inv-hero__in p { color: rgba(255, 255, 255, 0.82); max-width: 50ch; }
+.inv-hero { display: grid; grid-template-columns: clamp(320px, 33vw, 480px) 1fr; min-height: clamp(18rem, 40vh, 25rem); background: var(--forest); color: #fff; }
+.inv-hero__panel { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 0.9rem; padding: clamp(2rem, 4vw, 3rem) clamp(1.6rem, 3.5vw, 3.2rem); }
+.inv-hero__panel h1 { position: relative; font-size: clamp(2.3rem, 4vw, 3.4rem); font-weight: 700; line-height: 1.05; }
+.inv-hero__rule { position: relative; display: block; width: 64px; height: 2px; background: #fff; }
+.inv-hero__panel p { position: relative; color: #fff; max-width: 30ch; font-size: 1.1rem; line-height: 1.6; }
+.inv-hero__leaves { position: absolute; width: 180px; bottom: -34px; left: -30px; opacity: .95; pointer-events: none; filter: drop-shadow(0 8px 16px rgba(0,0,0,.25)); }
+.inv-hero__media { position: relative; min-height: 260px; }
+.inv-hero__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
+@media (max-width: 900px) {
+  .inv-hero { grid-template-columns: 1fr; }
+  .inv-hero__media { order: -1; min-height: 0; aspect-ratio: 16 / 9; }
+  .inv-hero__leaves { display: none; }
+}
 
 .inventory { padding-block: clamp(2.5rem, 5vw, 4rem) clamp(4rem, 8vw, 6rem); }
 .inventory__empty { padding: 2rem; border-radius: var(--r0); background: #fff; border: 1px dashed var(--stone-2); color: var(--ink-2); text-align: center; }
