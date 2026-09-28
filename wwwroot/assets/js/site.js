@@ -68,7 +68,7 @@
   }
 
   /* gallery lightbox: keyboard, swipe, focus trap */
-  var links = Array.prototype.slice.call(d.querySelectorAll('.gallery a[data-full]'));
+  var links = Array.prototype.slice.call(d.querySelectorAll('a[data-full]'));
   var lb = d.querySelector('.lightbox');
   if (links.length && lb) {
     var img = lb.querySelector('.lightbox__img'), cap = lb.querySelector('.lightbox__cap'), count = lb.querySelector('.lightbox__count');

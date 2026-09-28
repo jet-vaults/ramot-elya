@@ -74,6 +74,24 @@
         ],
         "createdAt": "2026-09-28T17:03:43.819Z",
         "reason": "model: no element renders ink on green; header/menu buttons and widget badges set color:#fff explicitly, verified in qa/apartments-1440.png"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "wwwroot/index.html"
+        ],
+        "createdAt": "2026-09-28T19:19:53.633Z",
+        "reason": "model: all button hover states measured in Chromium (forest on white / white on forest); detector misreads the .on-dark ghost override"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "wwwroot/index.html"
+        ],
+        "createdAt": "2026-09-28T19:19:53.780Z",
+        "reason": "model: 3-line English display tagline copied from the client's brochure sketch"
       }
     ]
   }

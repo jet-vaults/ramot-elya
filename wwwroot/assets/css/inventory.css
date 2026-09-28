@@ -1,4 +1,5 @@
 /* ------------------------------------------------------------------
+:root { --r0: 0; }
    מלאי דירות — page styles + JetVaults real-estate widget re-skin.
    The widget injects Bootstrap + Font Awesome AFTER this file, so the
    site chrome is guarded with body.page-inventory specificity.
@@ -8,16 +9,16 @@ body.page-inventory a { color: inherit; text-decoration: none; }
 body.page-inventory .wrap { width: 100%; max-width: var(--w); margin-inline: auto; padding-inline: var(--gutter); }
 body.page-inventory h1, body.page-inventory h2, body.page-inventory h3, body.page-inventory p, body.page-inventory ul { margin: 0; }
 body.page-inventory ul { padding: 0; list-style: none; }
-body.page-inventory .header .btn, body.page-inventory .menu__panel .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--r-pill); font-weight: 500; line-height: 1; border: 1.5px solid var(--g-700); background: var(--g-700); color: #fff; box-shadow: none; }
+body.page-inventory .header .btn, body.page-inventory .menu__panel .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--r0); font-weight: 500; line-height: 1; border: 1.5px solid var(--forest); background: var(--forest); color: #fff; box-shadow: none; }
 body.page-inventory .header .btn { min-height: 2.75rem; padding-inline: 1.3rem; font-size: 0.98rem; }
 body.page-inventory .menu__panel .btn { min-height: 3.2rem; padding-inline: 1.7rem; margin-top: 22px; }
-body.page-inventory .header .btn:hover, body.page-inventory .menu__panel .btn:hover { background: var(--g-600); border-color: var(--g-600); color: #fff; }
+body.page-inventory .header .btn:hover, body.page-inventory .menu__panel .btn:hover { background: var(--forest-deep); border-color: var(--forest-deep); color: #fff; }
 body.page-inventory .brand img { height: 46px; width: auto; }
 body.page-inventory .footer__logo { width: 220px; }
 body.page-inventory .footer__company img { height: 52px; width: auto; }
 body.page-inventory .footer__bottom { margin-top: clamp(2rem, 4vw, 3rem); }
 
-.inv-hero { position: relative; height: clamp(18rem, 42vh, 27rem); display: flex; align-items: flex-end; overflow: hidden; background: var(--g-950); color: #fff; }
+.inv-hero { position: relative; height: clamp(18rem, 42vh, 27rem); display: flex; align-items: flex-end; overflow: hidden; background: var(--forest-deep); color: #fff; }
 .inv-hero__media, .inv-hero__media img { position: absolute; inset: 0; width: 100%; height: 100%; }
 .inv-hero__media img { object-fit: cover; object-position: 50% 55%; }
 .inv-hero__scrim { position: absolute; inset: 0; background: linear-gradient(to top, rgba(22, 41, 29, 0.88) 0%, rgba(22, 41, 29, 0.3) 60%, rgba(22, 41, 29, 0.1) 100%); }
@@ -26,17 +27,17 @@ body.page-inventory .footer__bottom { margin-top: clamp(2rem, 4vw, 3rem); }
 .inv-hero__in p { color: rgba(255, 255, 255, 0.82); max-width: 50ch; }
 
 .inventory { padding-block: clamp(2.5rem, 5vw, 4rem) clamp(4rem, 8vw, 6rem); }
-.inventory__empty { padding: 2rem; border-radius: var(--r-card); background: #fff; border: 1px dashed var(--g-200); color: var(--ink-2); text-align: center; }
+.inventory__empty { padding: 2rem; border-radius: var(--r0); background: #fff; border: 1px dashed var(--stone-2); color: var(--ink-2); text-align: center; }
 html.no-js .inventory__empty { display: block; }
 
 /* ---- widget re-skin (light touch: fonts, colours, radius) ---- */
 body.page-inventory #inventory { font-family: var(--font); }
-body.page-inventory #inventory .btn-primary, body.page-inventory #inventory .btn-outline-primary:hover, body.page-inventory #inventory .page-item.active .page-link { background-color: var(--g-700) !important; border-color: var(--g-700) !important; color: #fff !important; }
-body.page-inventory #inventory .btn-outline-primary, body.page-inventory #inventory .page-link { color: var(--g-700) !important; border-color: var(--g-200) !important; }
+body.page-inventory #inventory .btn-primary, body.page-inventory #inventory .btn-outline-primary:hover, body.page-inventory #inventory .page-item.active .page-link { background-color: var(--forest) !important; border-color: var(--forest) !important; color: #fff !important; }
+body.page-inventory #inventory .btn-outline-primary, body.page-inventory #inventory .page-link { color: var(--forest) !important; border-color: var(--stone-2) !important; }
 body.page-inventory #inventory .btn, body.page-inventory #inventory .form-select, body.page-inventory #inventory .form-control { border-radius: 10px; }
-body.page-inventory #inventory .card { border-radius: var(--r-card); border: 1px solid var(--line); box-shadow: none; overflow: hidden; }
-body.page-inventory #inventory .card:hover { box-shadow: var(--shadow-sm); }
-body.page-inventory #inventory .badge { border-radius: var(--r-pill); }
-body.page-inventory #inventory a { color: var(--g-700); }
-body.page-inventory #inventory .text-primary { color: var(--g-700) !important; }
-body.page-inventory #inventory .bg-primary { background-color: var(--g-700) !important; color: #fff !important; }
+body.page-inventory #inventory .card { border-radius: var(--r0); border: 1px solid var(--line); box-shadow: none; overflow: hidden; }
+body.page-inventory #inventory .card:hover { box-shadow: var(--r0); }
+body.page-inventory #inventory .badge { border-radius: var(--r0); }
+body.page-inventory #inventory a { color: var(--forest); }
+body.page-inventory #inventory .text-primary { color: var(--forest) !important; }
+body.page-inventory #inventory .bg-primary { background-color: var(--forest) !important; color: #fff !important; }
