@@ -11,7 +11,7 @@
   var LTR = (document.documentElement.getAttribute('dir') || 'rtl') === 'ltr';
   var SIDE = LTR ? 'right' : 'left';
   var css = [
-    '#jv-a11y{position:fixed;bottom:18px;' + SIDE + ':18px;z-index:99999;font-family:"Noto Sans Hebrew","Segoe UI",Arial,sans-serif;direction:' + (LTR ? 'ltr' : 'rtl') + '}',
+    '#jv-a11y{position:fixed;bottom:18px;' + SIDE + ':18px;z-index:99999;font-family:"IBM Plex Sans Hebrew","Segoe UI",Arial,sans-serif;direction:' + (LTR ? 'ltr' : 'rtl') + '}',
     '#jv-a11y-toggle{display:grid;place-items:center;width:52px;height:52px;border:none;border-radius:50%;background:' + INK + ';color:#fff;cursor:pointer;box-shadow:0 8px 24px rgba(42,67,45,.35);transition:background .2s ease,box-shadow .2s ease}',
     '#jv-a11y-toggle:hover{background:' + ACCENT + ';box-shadow:0 12px 30px rgba(42,67,45,.4)}',
     '#jv-a11y-toggle svg{width:30px;height:30px}',
