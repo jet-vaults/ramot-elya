@@ -52,7 +52,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 8px); }
-body { margin: 0; font-family: var(--font); font-size: 1.0625rem; line-height: 1.75; color: var(--ink); background: var(--paper); overflow-x: hidden; }
+body { margin: 0; font-family: var(--font); font-weight: 350; font-stretch: 87.5%; font-size: 1.1rem; line-height: 1.7; color: var(--ink); background: var(--paper); overflow-x: hidden; }
 img, svg, iframe { display: block; max-width: 100%; }
 img { height: auto; }
 a { color: inherit; text-decoration: none; }
@@ -142,8 +142,11 @@ body.menu-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-4
 .section__head--center { text-align: center; margin-inline: auto; max-width: none; }
 .section__head--center .rule { margin-inline: auto; }
 .wrap--narrow { max-width: 960px; }
-.pattern { background-color: var(--forest-2); background-image: url("/assets/img/pattern-1000.webp"); background-size: cover; background-position: center; }
-@media (min-width: 1000px) { .pattern { background-image: url("/assets/img/pattern.webp"); } }
+/* swirl pattern sits on a blurred pseudo-layer so the raster edges stay soft */
+.pattern { background-color: var(--forest-2); isolation: isolate; overflow: hidden; }
+.pattern::before { content: ""; position: absolute; inset: -24px; z-index: -1; background: url("/assets/img/pattern-1000.webp") center / cover no-repeat; filter: blur(5px); pointer-events: none; }
+@media (min-width: 1000px) { .pattern::before { background-image: url("/assets/img/pattern.webp"); } }
+.band__pattern, .family { position: relative; }
 
 /* ---- hero: olive column + big rendering (sketch, top spread) ---- */
 .hero { display: grid; grid-template-columns: var(--col) 1fr; min-height: calc(100dvh - var(--header-h) - 170px); background: var(--olive); }
@@ -171,13 +174,15 @@ body.menu-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-4
 .intro__media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 
 /* ---- company ---- */
-.company { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: start; }
-.company__logo { width: min(380px, 100%); margin-bottom: 1.8rem; }
+.company { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: stretch; }
+.company__badge { background: var(--forest); padding: clamp(1.4rem, 2.6vw, 2rem) clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 1.8rem; }
+.company__badge img { width: min(360px, 100%); }
 .points { display: grid; gap: 1.3rem; margin-top: 1.6rem; }
 .points li { position: relative; padding-inline-start: 22px; color: var(--ink-2); }
 .points li::before { content: ""; position: absolute; inset-inline-start: 0; top: 0.72em; width: 8px; height: 8px; background: var(--olive); }
-.company__side { position: sticky; top: calc(var(--header-h) + 24px); display: grid; }
-.company__side img { width: 100%; aspect-ratio: 4 / 3.4; object-fit: cover; }
+.company__side { display: flex; flex-direction: column; }
+.company__side picture { flex: 1 1 auto; display: block; min-height: 280px; position: relative; }
+.company__side img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .family { padding: clamp(1.8rem, 3.5vw, 2.6rem); font-size: clamp(1.2rem, 1.8vw, 1.45rem); font-weight: 500; line-height: 1.55; color: #fff; }
 
 /* ---- neighborhood tiles (under the gallery) ---- */
@@ -305,7 +310,7 @@ html.no-js .rv { opacity: 1; transform: none; }
   .band__pattern { padding-block: 2.6rem; padding-inline-end: 150px; }
   .intro, .company, .contact__grid, .footer__grid { grid-template-columns: 1fr; }
   .intro__media { order: -1; }
-  .company__side { position: static; }
+  .company__side picture { min-height: 0; aspect-ratio: 4 / 3; }
   .hood { grid-template-columns: 1fr 1fr; }
   .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
   .contact__strip { width: 100%; }
