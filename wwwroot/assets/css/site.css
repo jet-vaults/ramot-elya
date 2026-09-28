@@ -176,7 +176,6 @@ body.menu-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-4
 .points { display: grid; gap: 1.3rem; margin-top: 1.6rem; }
 .points li { position: relative; padding-inline-start: 22px; color: var(--ink-2); }
 .points li::before { content: ""; position: absolute; inset-inline-start: 0; top: 0.72em; width: 8px; height: 8px; background: var(--olive); }
-.pledge { margin-top: 1.6rem; padding-inline-start: 22px; border-inline-start: 3px solid var(--forest); color: var(--forest); font-size: 1.1rem; font-weight: 600; line-height: 1.65; }
 .company__side { position: sticky; top: calc(var(--header-h) + 24px); display: grid; }
 .company__side img { width: 100%; aspect-ratio: 4 / 3.4; object-fit: cover; }
 .family { padding: clamp(1.8rem, 3.5vw, 2.6rem); font-size: clamp(1.2rem, 1.8vw, 1.45rem); font-weight: 500; line-height: 1.55; color: #fff; }
