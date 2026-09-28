@@ -66,7 +66,10 @@
     <div class="inv-hero__panel">
       <h1 id="inv-title">מלאי דירות</h1>
       <span class="inv-hero__rule" aria-hidden="true"></span>
-      <p>הדירות הזמינות בפרויקט אליה על הפארק&nbsp;2, במחיר למשתכן ובשוק החופשי.</p>
+      <p class="inv-hero__building" id="inv-building" aria-live="polite" hidden>
+        <span class="inv-hero__building-word">בניין</span>
+        <span class="inv-hero__building-letter" lang="en"></span>
+      </p>
       <img class="inv-hero__leaves" src="/assets/brand/leaves-700.png" width="700" height="595" alt="">
     </div>
     <div class="inv-hero__media">
@@ -133,6 +136,32 @@
   </div>
 </footer>
 
+<script>
+/* Big building letter in the header, kept in sync with the widget's building picker */
+(function () {
+  var box = document.getElementById('inv-building'); if (!box) return;
+  var letterEl = box.querySelector('.inv-hero__building-letter'), current = null;
+  function show(v) {
+    v = (v || '').trim();
+    if (v === current) return; current = v;
+    if (!v) { box.hidden = true; return; }
+    box.classList.add('is-swap');
+    setTimeout(function () { letterEl.textContent = v; box.hidden = false; box.classList.remove('is-swap'); }, box.hidden ? 0 : 180);
+  }
+  var tries = 0, wait = setInterval(function () {
+    var sel = document.getElementById('building-select');
+    if (!sel && ++tries < 150) return;
+    clearInterval(wait); if (!sel) return;
+    var sync = function () { show(sel.value); };
+    sel.addEventListener('change', sync);
+    var bb = document.getElementById('building-view-btn'), lb = document.getElementById('list-view-btn');
+    if (bb) bb.addEventListener('click', function () { setTimeout(sync, 0); });
+    if (lb) lb.addEventListener('click', function () { setTimeout(function () { show(''); }, 0); });
+    window.addEventListener('popstate', function () { setTimeout(sync, 50); });
+    if (sel.value) sync(); else new MutationObserver(function () { if (sel.value) sync(); }).observe(sel, { childList: true });
+  }, 100);
+})();
+</script>
 <script src="/assets/js/site.js" defer></script>
 <script src="/assets/js/a11y.js" defer></script>
 </body>
