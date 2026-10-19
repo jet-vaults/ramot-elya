@@ -240,6 +240,8 @@ body.menu-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-4
 .contact__label { font-size: 1.25rem; font-weight: 500; color: var(--ink-2); }
 .contact__phone { display: inline-block; font-size: clamp(2.6rem, 5.4vw, 4.2rem); font-weight: 600; color: var(--forest); line-height: 1.05; letter-spacing: 0.01em; }
 .contact__phone:hover { color: var(--olive); }
+.contact__email { display: block; margin-top: .6rem; font-size: clamp(1.1rem, 1.6vw, 1.35rem); font-weight: 500; color: var(--ink-2); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--line); word-break: break-all; }
+.contact__email:hover { color: var(--forest); text-decoration-color: var(--forest); }
 .contact__actions { margin-top: 1.4rem; display: flex; flex-wrap: wrap; gap: 10px; }
 .contact__strip { position: absolute; bottom: 0; inset-inline-start: 0; width: 55%; height: 72px; }
 .contact__leaves { position: absolute; bottom: 14px; inset-inline-start: 12%; width: clamp(180px, 16vw, 240px); pointer-events: none; filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.22)); }
