@@ -218,7 +218,7 @@ body.menu-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-4
 .steps__note { font-size: 0.92rem; color: var(--ink-3); }
 
 /* ---- downloads ---- */
-.downloads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.downloads { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .dl { display: grid; grid-template-rows: auto 1fr auto; gap: 18px; padding: clamp(1.6rem, 2.6vw, 2.2rem); background: var(--white); border-top: 4px solid var(--forest); transition: transform .35s var(--ease), box-shadow .35s ease; }
 .dl:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(29, 47, 32, 0.14); }
 .dl__icon { width: 60px; height: 60px; background: var(--forest); color: #fff; display: grid; place-items: center; }
@@ -272,12 +272,42 @@ html.no-js .rv { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
   .rv { opacity: 1; transform: none !important; transition: none; }
   .hero__media img { animation: none; transform: none; }
-  .btn, .dl, .gallery img, .nav a::after, .menu__panel, .menu__backdrop, .step summary::after { transition: none; }
+  .btn, .dl, .gallery img, .nav a::after, .menu__panel, .menu__backdrop, .step summary::after, .sp__area polygon, .sp__badge circle, .sp__tip, .sp__chip { transition: none; }
+}
+
+/* ---- site plan: hover a building, go to its apartments ---- */
+.sp { position: relative; }
+.sp__fig { position: relative; background: var(--white); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.sp__fig img { display: block; width: 100%; height: auto; }
+.sp__map { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sp__area { cursor: pointer; outline: none; }
+.sp__area polygon { fill: rgba(42, 67, 45, 0); stroke: rgba(42, 67, 45, 0); stroke-width: 3; vector-effect: non-scaling-stroke; transition: fill .25s ease, stroke .25s ease; }
+.sp__area:hover polygon, .sp__area:focus-visible polygon, .sp__area.is-hot polygon { fill: rgba(42, 67, 45, .3); stroke: var(--forest); }
+.sp__badge circle { r: 17px; fill: var(--forest); stroke: #fff; stroke-width: 2.5; transition: r .25s var(--ease), fill .25s ease; }
+.sp__badge text { fill: #fff; font-family: var(--font); font-weight: 700; font-size: 19px; text-anchor: middle; pointer-events: none; }
+.sp__area:hover .sp__badge circle, .sp__area:focus-visible .sp__badge circle, .sp__area.is-hot .sp__badge circle { r: 21px; fill: var(--forest-deep); }
+.sp__tip { position: absolute; z-index: 2; pointer-events: none; background: var(--forest-deep); color: #fff; padding: .55rem .9rem; border-radius: var(--r); font-size: .95rem; line-height: 1.35; white-space: nowrap; box-shadow: 0 10px 24px rgba(0, 0, 0, .22); opacity: 0; transform: translate(-50%, calc(-100% - 18px)) translateY(6px); transition: opacity .2s ease, transform .2s ease; }
+.sp__tip.is-on { opacity: 1; transform: translate(-50%, calc(-100% - 18px)); }
+.sp__tip b { display: block; font-weight: 700; }
+.sp__tip small { display: block; opacity: .8; font-size: .85em; }
+.sp__list { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; margin-top: 1.3rem; }
+.sp__lbl { color: var(--ink-3); font-size: .95rem; }
+.sp__group { display: inline-flex; align-items: center; gap: 6px; }
+.sp__group b { font-weight: 600; color: var(--ink-2); font-size: .95rem; margin-inline-end: 4px; }
+.sp__chip { display: inline-grid; place-items: center; min-width: 38px; height: 38px; padding: 0 10px; border: 1.5px solid var(--forest); border-radius: var(--r); color: var(--forest); font-weight: 700; text-decoration: none; transition: background .2s ease, color .2s ease; }
+.sp__chip:hover, .sp__chip:focus-visible, .sp__chip.is-hot { background: var(--forest); color: #fff; }
+.sp__note { margin-top: 1rem; font-size: .9rem; color: var(--ink-3); }
+.sp__note a { color: var(--forest); text-decoration: underline; text-underline-offset: 3px; }
+@media (hover: none) {
+  .sp__area polygon { fill: rgba(42, 67, 45, .07); stroke: rgba(42, 67, 45, .4); }
+  .sp__tip { display: none; }
 }
 
 /* ---- responsive ---- */
 @media (max-width: 1100px) {
-  .downloads { grid-template-columns: 1fr; }
+  .downloads { grid-template-columns: 1fr 1fr; }
+  .sp__badge circle { r: 22px; }
+  .sp__badge text { font-size: 24px; }
 }
 @media (max-width: 1023px) {
   .nav { display: none; }
@@ -301,6 +331,10 @@ html.no-js .rv { opacity: 1; transform: none; }
 }
 @media (max-width: 640px) {
   body { font-size: 1rem; }
+  .downloads { grid-template-columns: 1fr; }
+  .sp__badge circle { r: 30px; }
+  .sp__badge text { font-size: 32px; }
+  .sp__list { gap: 8px 14px; }
   .hood { grid-template-columns: 1fr; }
   .step__body { padding-inline: 0; }
   .gallery { grid-auto-rows: 150px; }

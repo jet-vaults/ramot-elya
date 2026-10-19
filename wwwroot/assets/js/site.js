@@ -109,3 +109,38 @@
     }, { passive: true });
   }
 })();
+
+/* site plan: tooltip on hover, and the entrance chips highlight the same building */
+(function () {
+  var sp = document.querySelector('.sp'); if (!sp) return;
+  var fig = sp.querySelector('.sp__fig'), tip = sp.querySelector('.sp__tip');
+  var areas = sp.querySelectorAll('.sp__area'), chips = sp.parentNode.querySelectorAll('.sp__chip');
+  function hot(letter) {
+    areas.forEach(function (a) { a.classList.toggle('is-hot', !!letter && a.getAttribute('data-entrance') === letter); });
+    chips.forEach(function (c) { c.classList.toggle('is-hot', !!letter && c.getAttribute('data-entrance') === letter); });
+  }
+  function showTip(a) {
+    tip.textContent = '';
+    var b = document.createElement('b'); b.textContent = 'בניין ' + a.getAttribute('data-building') + ' · כניסה ' + a.getAttribute('data-entrance');
+    var s = document.createElement('small'); s.textContent = 'לחצו לצפייה בדירות במלאי';
+    tip.appendChild(b); tip.appendChild(s); tip.classList.add('is-on');
+  }
+  areas.forEach(function (a) {
+    a.addEventListener('pointerenter', function (e) { if (e.pointerType === 'touch') return; showTip(a); hot(a.getAttribute('data-entrance')); });
+    a.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      var r = fig.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+      tip.style.left = Math.max(90, Math.min(r.width - 90, x)) + 'px';
+      tip.style.top = (y < 70 ? y + 90 : y) + 'px';
+    });
+    a.addEventListener('pointerleave', function () { tip.classList.remove('is-on'); hot(null); });
+    a.addEventListener('focus', function () { hot(a.getAttribute('data-entrance')); });
+    a.addEventListener('blur', function () { hot(null); });
+  });
+  chips.forEach(function (c) {
+    c.addEventListener('mouseenter', function () { hot(c.getAttribute('data-entrance')); });
+    c.addEventListener('mouseleave', function () { hot(null); });
+    c.addEventListener('focus', function () { hot(c.getAttribute('data-entrance')); });
+    c.addEventListener('blur', function () { hot(null); });
+  });
+})();
