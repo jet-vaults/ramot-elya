@@ -133,6 +133,8 @@ body.menu-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-4
 .band__pattern, .family { position: relative; }
 
 /* ---- hero: olive column + big rendering (sketch, top spread) ---- */
+.announce { margin: 0; font-weight: 700; padding: 0.85rem 16px; background: var(--forest); color: #fff; text-align: center; font-size: clamp(1.15rem, 2vw, 1.5rem); line-height: 1.3; }
+.announce strong { font-weight: inherit; }
 .hero { display: grid; grid-template-columns: var(--col) 1fr; min-height: calc(100dvh - var(--header-h) - 170px); background: var(--olive); }
 .hero__panel { position: relative; padding: clamp(2.2rem, 4vw, 3.6rem) clamp(1.6rem, 3.5vw, 3.4rem); display: flex; flex-direction: column; justify-content: center; gap: 1.2rem; }
 .hero__panel::before { content: ""; position: absolute; top: 0; bottom: 0; inset-inline-start: 22px; width: 1px; background: rgba(255, 255, 255, 0.45); }
